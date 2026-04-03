@@ -75,11 +75,16 @@
       padding: 0.8rem 3rem;
     }
     .nav-logo {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.4rem;
-      color: var(--charcoal);
-      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
     }
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+      filter: invert(1);
+      transition: opacity 0.25s ease;
+    }
+    .nav-logo img:hover { opacity: 0.8; }
     .nav-links {
       display: flex;
       gap: 0.25rem;
@@ -1321,7 +1326,7 @@
 
   <!-- Navigation -->
   <nav class="nav" id="nav">
-    <a href="#" class="nav-logo">Joseph Burns</a>
+    <a href="#" class="nav-logo"><img src="jb-logo-white.png" alt="JB"></a>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
