@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joseph Burns — Product Manager | Supply Chain Integration</title>
+  <meta name="description" content="Product Manager with 10 years in supply chain integration. $1.29M pipeline built from scratch. 19,000x performance improvement shipped.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       DARK INDUSTRIAL — Deep slate, sapphire, teal
+       ============================================ */
+    :root {
+      --cream: #1c1e26;
+      --cream-dark: #161820;
+      --warm-white: #12141b;
+      --charcoal: #e8e8ed;
+      --charcoal-soft: #d0d0d8;
+      --slate: #a0a0b0;
+      --text-body: #c0c0cc;
+      --text-light: #8888a0;
+      --text-faint: #5a5a72;
+      --rust: #5b8def;
+      --rust-light: #7aa4ff;
+      --rust-dark: #4070d4;
+      --teal: #3dc9b0;
+      --teal-light: #50e0c8;
+      --navy: #7a9cc8;
+      --border: rgba(255,255,255,0.08);
+      --border-strong: rgba(255,255,255,0.14);
+      --shadow-soft: 0 2px 20px rgba(0,0,0,0.25);
+      --shadow-md: 0 4px 30px rgba(0,0,0,0.35);
+      --shadow-lg: 0 8px 50px rgba(0,0,0,0.45);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--warm-white);
+      color: var(--text-body);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection { background: var(--rust); color: white; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ============================================
+       NAVIGATION
+       ============================================ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.4s ease;
+    }
+    .nav.scrolled {
+      background: rgba(18, 20, 27, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.8rem 3rem;
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      color: var(--charcoal);
+      letter-spacing: -0.02em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-light);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+    }
+    .nav-links a:hover {
+      color: var(--charcoal);
+      background: rgba(255,255,255,0.06);
+    }
+    .nav-cta {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.55rem 1.5rem;
+      background: var(--rust);
+      color: #12141b;
+      border-radius: 6px;
+      margin-left: 0.75rem;
+      transition: all 0.3s ease;
+    }
+    .nav-cta:hover {
+      background: var(--rust);
+      color: white;
+    }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .nav-toggle span {
+      width: 22px;
+      height: 2px;
+      background: var(--charcoal);
+      border-radius: 1px;
+      transition: all 0.3s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 20, 27, 0.98);
+      backdrop-filter: blur(20px);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.75rem;
+      color: var(--charcoal);
+    }
+
+    /* ============================================
+       LAYOUT
+       ============================================ */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+    .container-narrow {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+
+    /* ============================================
+       REVEAL ANIMATIONS
+       ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================
+       HERO
+       ============================================ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 0 6rem;
+      position: relative;
+      background: var(--cream);
+      overflow: hidden;
+    }
+    /* Subtle geometric pattern */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 10%;
+      right: 5%;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 5rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--rust);
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 2rem;
+      height: 2px;
+      background: var(--rust);
+    }
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3.5rem, 7vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--charcoal);
+      margin-bottom: 1.25rem;
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--rust);
+    }
+    .hero-title {
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--text-light);
+      margin-bottom: 1.75rem;
+    }
+    .hero-statement {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      max-width: 520px;
+      line-height: 1.85;
+    }
+    .hero-statement strong {
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 2rem;
+      background: var(--rust);
+      color: #12141b;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .btn-dark:hover { background: var(--rust-light); color: #12141b; transform: translateY(-2px); box-shadow: 0 4px 30px rgba(91,141,239,0.25); }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 2rem;
+      background: transparent;
+      color: var(--charcoal);
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1.5px solid var(--border-strong);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .btn-ghost:hover { border-color: var(--rust); color: var(--rust); }
+
+    /* Hero portrait */
+    .hero-portrait {
+      position: relative;
+    }
+    .hero-portrait-img {
+      width: 320px;
+      height: 320px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      z-index: 2;
+    }
+    .hero-portrait::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      width: 320px;
+      height: 320px;
+      border-radius: 20px;
+      border: 2px solid var(--rust);
+      opacity: 0.3;
+      z-index: 1;
+    }
+    .hero-portrait-badge {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      z-index: 3;
+      background: #1c1e26;
+      border-radius: 14px;
+      padding: 1rem 1.5rem;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .hero-portrait-badge img {
+      height: 28px;
+      width: auto;
+    }
+    .hero-portrait-badge-text {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      line-height: 1.3;
+    }
+    .hero-portrait-badge-text strong {
+      display: block;
+      color: var(--charcoal);
+      font-weight: 600;
+      font-size: 0.82rem;
+    }
+
+    /* Hero stats bar */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 4rem;
+      background: #1c1e26;
+      border-radius: 16px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-stat {
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+    .hero-stat:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 25%;
+      height: 50%;
+      width: 1px;
+      background: var(--border);
+    }
+    .hero-stat-value {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--charcoal);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .hero-stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-faint);
+    }
+
+    /* ============================================
+       SECTION COMMON
+       ============================================ */
+    section { padding: 6rem 0; }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--rust);
+      margin-bottom: 0.75rem;
+    }
+    .section-label::before {
+      content: '';
+      width: 1.5rem;
+      height: 2px;
+      background: var(--rust);
+    }
+    .section-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.25rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--charcoal);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ============================================
+       ABOUT
+       ============================================ */
+    .about-section { background: #161820; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      margin-top: 3.5rem;
+      align-items: start;
+    }
+    .about-narrative p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text-body);
+      margin-bottom: 1.5rem;
+    }
+    .about-narrative strong {
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+    .about-highlight {
+      color: var(--rust);
+      font-weight: 600;
+      background: rgba(91,141,239,0.15);
+      padding: 0 0.2em;
+      border-radius: 3px;
+    }
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    .about-tag {
+      padding: 0.35rem 0.9rem;
+      background: var(--cream);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--slate);
+      transition: all 0.25s ease;
+    }
+    .about-tag:hover {
+      background: var(--rust);
+      color: #12141b;
+    }
+
+    /* Journey card */
+    .journey-card {
+      background: var(--cream);
+      border-radius: 16px;
+      padding: 2.25rem;
+      border: 1px solid var(--border);
+    }
+    .journey-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      color: var(--charcoal);
+      margin-bottom: 1.75rem;
+    }
+    .journey-step {
+      display: grid;
+      grid-template-columns: 72px 20px 1fr;
+      gap: 0.75rem;
+      align-items: start;
+      padding: 0.8rem 0;
+    }
+    .journey-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--text-faint);
+      padding-top: 2px;
+    }
+    .journey-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .journey-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--text-faint);
+      border: 2px solid var(--cream);
+      flex-shrink: 0;
+    }
+    .journey-dot.current {
+      background: var(--rust);
+      box-shadow: 0 0 0 3px rgba(91, 141, 239, 0.25);
+    }
+    .journey-line {
+      width: 2px;
+      flex: 1;
+      background: var(--border);
+      min-height: 24px;
+    }
+    .journey-step:last-child .journey-line { display: none; }
+    .journey-role {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+    }
+    .journey-detail {
+      font-size: 0.75rem;
+      color: var(--text-faint);
+      margin-top: 0.15rem;
+    }
+
+    /* ============================================
+       IMPACT METRICS
+       ============================================ */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .impact-card {
+      background: #1c1e26;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.25rem;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .impact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: transparent;
+    }
+    .impact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--rust);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .impact-card:hover::before { transform: scaleX(1); }
+    .impact-card.teal::before { background: var(--teal); }
+    .impact-card.navy::before { background: var(--navy); }
+    .impact-value {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.75rem;
+      color: var(--charcoal);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .impact-value.rust { color: var(--rust); }
+    .impact-value.teal { color: var(--teal); }
+    .impact-value.navy { color: var(--navy); }
+    .impact-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+    .impact-desc {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    /* ============================================
+       EXPERIENCE
+       ============================================ */
+    .exp-section { background: #161820; }
+    .exp-list {
+      margin-top: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .exp-item {
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .exp-item:first-child { border-top: 1px solid var(--border); }
+    .exp-header {
+      display: grid;
+      grid-template-columns: 180px 1fr auto;
+      gap: 2rem;
+      padding: 2rem 0;
+      cursor: pointer;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    .exp-header:hover { padding-left: 0.5rem; }
+    .exp-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-faint);
+    }
+    .exp-header h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--charcoal);
+    }
+    .exp-header .company {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--rust);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.2rem;
+    }
+    .exp-toggle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+      color: var(--text-light);
+    }
+    .exp-item.open .exp-toggle {
+      background: var(--rust);
+      border-color: var(--rust);
+      color: #12141b;
+      transform: rotate(45deg);
+    }
+    .exp-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-bottom: 1rem;
+      padding-left: 212px;
+    }
+    .exp-metric {
+      padding: 0.3rem 0.85rem;
+      background: var(--cream);
+      border-radius: 100px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--rust);
+      font-weight: 500;
+    }
+    .exp-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .exp-item.open .exp-body { max-height: 800px; }
+    .exp-content {
+      padding: 0 0 2.5rem;
+      padding-left: 212px;
+    }
+    .exp-achievements {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .exp-achievement {
+      padding: 1.25rem;
+      background: var(--cream);
+      border-radius: 12px;
+      border-left: 3px solid var(--rust);
+    }
+    .exp-achievement.teal { border-left-color: var(--teal); }
+    .exp-achievement.navy { border-left-color: var(--navy); }
+    .exp-achievement.gold { border-left-color: #e6be46; }
+    .exp-achievement h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 0.4rem;
+    }
+    .exp-achievement p {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    /* ============================================
+       PERFORMANCE (Before/After)
+       ============================================ */
+    .perf-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .perf-card {
+      background: #1c1e26;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+    .perf-card h4 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      font-size: 1.05rem;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+    .perf-bar-group { margin-bottom: 1.25rem; }
+    .perf-bar-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+    }
+    .perf-bar-label span {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--text-faint);
+    }
+    .perf-bar-label strong {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--teal);
+      font-weight: 500;
+    }
+    .perf-bar-track {
+      width: 100%;
+      height: 6px;
+      background: var(--cream-dark);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .perf-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      width: 0%;
+      transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .perf-bar-fill.rust { background: var(--rust); }
+    .perf-bar-fill.teal { background: var(--teal); }
+    .perf-multiplier {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.75rem;
+      background: rgba(61, 201, 176, 0.12);
+      border-radius: 100px;
+      font-family: 'DM Mono', monospace;
+      font-weight: 500;
+      font-size: 0.75rem;
+      color: var(--teal);
+      margin-top: 0.5rem;
+    }
+
+    /* ============================================
+       DEALS / REVENUE
+       ============================================ */
+    .deals-section { background: #161820; }
+    .deals-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+    .deals-col {
+      background: var(--cream);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .deals-col-header {
+      padding: 1.25rem 1.75rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .deals-col-header h3 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      font-size: 1.05rem;
+      color: var(--charcoal);
+    }
+    .deals-total {
+      font-family: 'DM Mono', monospace;
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--teal);
+    }
+    .deal-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 1.75rem;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s ease;
+    }
+    .deal-row:last-child { border-bottom: none; }
+    .deal-row:hover { background: rgba(255,255,255,0.03); }
+    .deal-name { font-size: 0.9rem; color: var(--text-body); }
+    .deal-value {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      color: var(--teal);
+      font-weight: 500;
+    }
+
+    /* ============================================
+       TECHNICAL SKILLS
+       ============================================ */
+    .tech-bento {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3.5rem;
+    }
+    .tech-card {
+      background: #1c1e26;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.35s ease;
+    }
+    .tech-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-soft);
+    }
+    .tech-card.wide { grid-column: span 2; }
+    .tech-card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .tech-card-icon.rust { background: rgba(91,141,239,0.12); color: var(--rust); }
+    .tech-card-icon.teal { background: rgba(61,201,176,0.12); color: var(--teal); }
+    .tech-card-icon.navy { background: rgba(122,156,200,0.12); color: var(--navy); }
+    .tech-card-icon.gold { background: rgba(230,190,70,0.12); color: #e6be46; }
+    .tech-card h4 {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--charcoal);
+      margin-bottom: 0.4rem;
+    }
+    .tech-card p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+    .tech-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.75rem;
+    }
+    .tech-pills span {
+      padding: 0.2rem 0.55rem;
+      background: var(--cream);
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--slate);
+    }
+
+    /* ============================================
+       DOMAIN EXPERTISE
+       ============================================ */
+    .domain-section { background: #161820; }
+    .domain-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .domain-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.25rem;
+      transition: all 0.3s ease;
+    }
+    .domain-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-soft);
+    }
+    .domain-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+    .domain-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .domain-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.85rem;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+    .domain-arrow {
+      color: var(--rust);
+      font-size: 0.75rem;
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
+
+    /* ============================================
+       QUOTE
+       ============================================ */
+    .quote-section {
+      background: #0d0f14;
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .quote-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      font-weight: 400;
+      line-height: 1.45;
+      color: #e8e8ed;
+      max-width: 800px;
+      margin: 0 auto 1.25rem;
+    }
+    .quote-text em {
+      font-style: italic;
+      color: var(--rust-light);
+    }
+    .quote-attr {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--text-faint);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    /* ============================================
+       CONSULTING
+       ============================================ */
+    .consulting-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .consulting-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .consulting-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-2px);
+    }
+    .consulting-icon {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+    .consulting-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+    .consulting-desc {
+      font-size: 0.85rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .consulting-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .consulting-list li {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-light);
+      padding: 0.35rem 0;
+      border-top: 1px solid var(--border);
+      padding-left: 1rem;
+      position: relative;
+    }
+    .consulting-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--rust);
+      font-size: 0.65rem;
+    }
+    .consulting-cta {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .consulting-cta-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+    .consulting-cta-btn {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--warm-white);
+      background: var(--rust);
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: background 0.3s ease;
+    }
+    .consulting-cta-btn:hover {
+      background: var(--rust-dark);
+    }
+
+    /* ============================================
+       CONTACT
+       ============================================ */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 4rem;
+      margin-top: 3.5rem;
+      align-items: start;
+    }
+    .contact-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .contact-heading em {
+      font-style: italic;
+      color: var(--rust);
+    }
+    .contact-sub {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      background: var(--cream);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    .contact-link:hover {
+      border-color: var(--rust);
+      transform: translateX(6px);
+    }
+    .contact-link-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: #1c1e26;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-link-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-faint);
+    }
+    .contact-link-value {
+      font-size: 0.92rem;
+      color: var(--charcoal);
+      font-weight: 500;
+    }
+    .contact-facts {
+      background: var(--cream);
+      border-radius: 16px;
+      padding: 2.25rem;
+      border: 1px solid var(--border);
+    }
+    .contact-facts h3 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+    .fact-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .fact-row:last-child { border-bottom: none; }
+    .fact-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-faint);
+    }
+    .fact-value {
+      font-size: 0.88rem;
+      color: var(--charcoal);
+      text-align: right;
+      font-weight: 500;
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .footer {
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-left {
+      font-size: 0.78rem;
+      color: var(--text-faint);
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .footer-links a {
+      font-size: 0.78rem;
+      color: var(--text-faint);
+      transition: color 0.2s ease;
+    }
+    .footer-links a:hover { color: var(--rust); }
+
+    /* ============================================
+       CLIENT MARQUEE
+       ============================================ */
+    .marquee-section {
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .marquee-section::before, .marquee-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .marquee-section::before {
+      left: 0;
+      background: linear-gradient(to right, var(--cream), transparent);
+    }
+    .marquee-section::after {
+      right: 0;
+      background: linear-gradient(to left, var(--cream), transparent);
+    }
+    .marquee-label {
+      text-align: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-faint);
+      margin-bottom: 1rem;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 3.5rem;
+      animation: marquee 35s linear infinite;
+      width: max-content;
+      align-items: center;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      white-space: nowrap;
+      padding: 0 1rem;
+      opacity: 0.55;
+      transition: opacity 0.4s ease;
+    }
+    .marquee-item:hover {
+      opacity: 1;
+    }
+    .marquee-item img {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+    }
+    .marquee-item img[src$=".png"] {
+      height: 40px;
+      mix-blend-mode: screen;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 1024px) {
+      .container, .container-narrow { padding: 0 2rem; }
+      .nav { padding: 1rem 2rem; }
+      .hero-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-portrait { justify-self: center; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .impact-grid { grid-template-columns: 1fr; }
+      .perf-grid { grid-template-columns: 1fr; }
+      .deals-layout { grid-template-columns: 1fr; }
+      .tech-bento { grid-template-columns: 1fr 1fr; }
+      .domain-grid { grid-template-columns: 1fr; }
+      .consulting-grid { grid-template-columns: 1fr; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .exp-metrics { padding-left: 0; }
+      .exp-content { padding-left: 0; }
+      .exp-header { grid-template-columns: 1fr auto; }
+      .exp-date { grid-column: 1 / -1; }
+      .exp-achievements { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+      .hero-stats { grid-template-columns: repeat(2, 1fr); }
+      .hero-stat:nth-child(2)::after { display: none; }
+      .tech-bento { grid-template-columns: 1fr; }
+      .tech-card.wide { grid-column: span 1; }
+    }
+
+    @media (max-width: 480px) {
+      .container, .container-narrow { padding: 0 1.25rem; }
+      .hero-portrait-img { width: 260px; height: 260px; }
+      .hero-portrait::before { width: 260px; height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">Joseph Burns</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#impact">Impact</a>
+      <a href="#experience">Experience</a>
+      <a href="#performance">Performance</a>
+      <a href="#technical">Technical</a>
+      <a href="#consulting">Consulting</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="mailto:joewhojoeburns@gmail.com" class="nav-cta">Get In Touch</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about" class="mob-link">About</a>
+    <a href="#impact" class="mob-link">Impact</a>
+    <a href="#experience" class="mob-link">Experience</a>
+    <a href="#performance" class="mob-link">Performance</a>
+    <a href="#technical" class="mob-link">Technical</a>
+    <a href="#contact" class="mob-link">Contact</a>
+  </div>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-layout">
+          <div>
+            <div class="hero-eyebrow reveal">Product Manager · 10 Years</div>
+            <h1 class="hero-name reveal">Joseph<br><em>Burns</em></h1>
+            <p class="hero-title reveal">Supply Chain Integration × B2B SaaS</p>
+            <p class="hero-statement reveal">
+              I build products, close deals, and fix what's broken.
+              <strong>Nine years</strong> turning integration complexity into
+              enterprise revenue. I find the bottleneck engineers miss.
+            </p>
+            <div class="hero-actions reveal">
+              <a href="#contact" class="btn-dark">Let's Talk <span>→</span></a>
+              <a href="#experience" class="btn-ghost">View Experience</a>
+            </div>
+          </div>
+
+          <div class="hero-portrait reveal">
+            <img src="T03HW19MH-U7W1PBXDX-e3c667cf4050-512.png"
+                 alt="Joseph Burns headshot"
+                 class="hero-portrait-img">
+            <div class="hero-portrait-badge">
+              <img src="Cleo_logo_(2018).png" alt="Cleo logo">
+              <div class="hero-portrait-badge-text">
+                <strong>Cleo</strong>
+                10 years · Supply Chain
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-stats reveal">
+          <div class="hero-stat">
+            <div class="hero-stat-value" data-count="1.29" data-prefix="$" data-suffix="M">$0</div>
+            <div class="hero-stat-label">Pipeline Created</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value" data-count="7.3" data-prefix="$" data-suffix="M">$0</div>
+            <div class="hero-stat-label">ARR Protected</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value" data-count="19000" data-suffix="×">0</div>
+            <div class="hero-stat-label">Performance Gain</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value" data-count="9" data-suffix=" yrs">0</div>
+            <div class="hero-stat-label">Domain Expertise</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client marquee -->
+    <div class="marquee-section">
+      <div class="marquee-label">Trusted by enterprise teams at</div>
+      <div class="marquee-track">
+        <div class="marquee-item"><img src="logos/fedex.png" alt="FedEx"></div>
+        <div class="marquee-item"><img src="logos/purolator.png" alt="Purolator"></div>
+        <div class="marquee-item"><img src="logos/old-dominion.png" alt="Old Dominion"></div>
+        <div class="marquee-item"><img src="logos/schneider.svg" alt="Schneider"></div>
+        <div class="marquee-item"><img src="logos/lactalis.png" alt="LACTALIS"></div>
+        <div class="marquee-item"><img src="logos/ben-e-keith.svg" alt="Ben E. Keith"></div>
+        <div class="marquee-item"><img src="logos/mueller.png" alt="Mueller"></div>
+        <div class="marquee-item"><img src="logos/rjw-transport.png" alt="RJW Transport"></div>
+        <div class="marquee-item"><img src="logos/kane-freight.svg" alt="Kane Freight"></div>
+        <div class="marquee-item"><img src="logos/stg.png" alt="STG"></div>
+        <div class="marquee-item"><img src="logos/evans.png" alt="Evans"></div>
+        <!-- Duplicate for seamless loop -->
+        <div class="marquee-item"><img src="logos/fedex.png" alt="FedEx"></div>
+        <div class="marquee-item"><img src="logos/purolator.png" alt="Purolator"></div>
+        <div class="marquee-item"><img src="logos/old-dominion.png" alt="Old Dominion"></div>
+        <div class="marquee-item"><img src="logos/schneider.svg" alt="Schneider"></div>
+        <div class="marquee-item"><img src="logos/lactalis.png" alt="LACTALIS"></div>
+        <div class="marquee-item"><img src="logos/ben-e-keith.svg" alt="Ben E. Keith"></div>
+        <div class="marquee-item"><img src="logos/mueller.png" alt="Mueller"></div>
+        <div class="marquee-item"><img src="logos/rjw-transport.png" alt="RJW Transport"></div>
+        <div class="marquee-item"><img src="logos/kane-freight.svg" alt="Kane Freight"></div>
+        <div class="marquee-item"><img src="logos/stg.png" alt="STG"></div>
+        <div class="marquee-item"><img src="logos/evans.png" alt="Evans"></div>
+      </div>
+    </div>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">01 — About</div>
+          <h2 class="section-heading">Not a traditional PM.</h2>
+          <p class="section-desc">I came up through support, learned the product from the inside, and can explain what happens when an 856 fails to parse.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-narrative reveal">
+            <p>
+              At <strong>Cleo</strong>, a supply chain integration company, I created a
+              <span class="about-highlight">$1.29M revenue stream from scratch</span>, shipped a
+              <strong>19,000× performance improvement</strong>, and launched a platform
+              release protecting <span class="about-highlight">$7.3M ARR</span>.
+            </p>
+            <p>
+              I size infrastructure to protect revenue, keep leadership aligned across parallel
+              initiatives, and bridge the gap between <strong>engineering depth</strong>
+              and <strong>business outcomes</strong>. Nine years at one company because the
+              scope kept growing.
+            </p>
+            <div class="about-tags">
+              <span class="about-tag">EDI/X12</span>
+              <span class="about-tag">B2B Integration</span>
+              <span class="about-tag">Purchase Order Automation</span>
+              <span class="about-tag">Invoice Management</span>
+              <span class="about-tag">Procure-to-Pay</span>
+              <span class="about-tag">Supply Chain</span>
+              <span class="about-tag">Kubernetes</span>
+              <span class="about-tag">PostgreSQL</span>
+              <span class="about-tag">API Integration</span>
+            </div>
+          </div>
+
+          <div class="journey-card reveal">
+            <h3>Career Progression</h3>
+            <div class="journey-step">
+              <span class="journey-year">2024</span>
+              <div class="journey-node"><div class="journey-dot current"></div><div class="journey-line"></div></div>
+              <div>
+                <div class="journey-role">Product Manager</div>
+                <div class="journey-detail">$1.29M pipeline · 19,000× perf · $7.3M ARR</div>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-year">2023</span>
+              <div class="journey-node"><div class="journey-dot"></div><div class="journey-line"></div></div>
+              <div>
+                <div class="journey-role">Product Owner</div>
+                <div class="journey-detail">70× optimization · WLP launch · $500K+</div>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-year">2022</span>
+              <div class="journey-node"><div class="journey-dot"></div><div class="journey-line"></div></div>
+              <div>
+                <div class="journey-role">Product Analyst</div>
+                <div class="journey-detail">100% migration · 23% throughput increase</div>
+              </div>
+            </div>
+            <div class="journey-step">
+              <span class="journey-year">2017</span>
+              <div class="journey-node"><div class="journey-dot"></div></div>
+              <div>
+                <div class="journey-role">Sr. Technical Support Engineer</div>
+                <div class="journey-detail">Technical foundation · Escalation lead</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== IMPACT ===== -->
+    <section id="impact">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">02 — Impact</div>
+          <h2 class="section-heading">Numbers that matter.</h2>
+          <p class="section-desc">Every initiative tied to revenue, performance, or customer outcomes.</p>
+        </div>
+        <div class="impact-grid">
+          <div class="impact-card reveal">
+            <div class="impact-value rust" data-count="1.29" data-prefix="$" data-suffix="M">$0</div>
+            <div class="impact-title">Pipeline Created</div>
+            <div class="impact-desc">Built APEX premium infrastructure tier from zero. 10 enterprise deals including FedEx, Purolator, Schneider. No commission — pure product/sales engineering.</div>
+          </div>
+          <div class="impact-card teal reveal">
+            <div class="impact-value teal" data-count="7.3" data-prefix="$" data-suffix="M">$0</div>
+            <div class="impact-title">ARR Protected</div>
+            <div class="impact-desc">Launched Clarify 6 major release. Customers on legacy versions needed migration. Recruited 15 early access customers, coordinated hardening across teams.</div>
+          </div>
+          <div class="impact-card navy reveal">
+            <div class="impact-value navy" data-count="19000" data-suffix="×">0</div>
+            <div class="impact-title">Performance Improvement</div>
+            <div class="impact-desc">114MB payloads went from 10h 43m to 2 seconds. Identified I/O bottleneck in transformation engine, drove refactor with engineering.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="section-divider"></div></div>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" class="exp-section">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">03 — Experience</div>
+          <h2 class="section-heading">10 years, one trajectory.</h2>
+          <p class="section-desc">Support → Analyst → Product Owner → Product Manager. The scope kept growing.</p>
+        </div>
+
+        <div class="exp-list">
+          <div class="exp-item open reveal">
+            <div class="exp-header" onclick="toggleExp(this)">
+              <span class="exp-date">Apr 2024 — Present</span>
+              <div>
+                <h3>Product Manager</h3>
+                <div class="company">Cleo · Remote</div>
+              </div>
+              <div class="exp-toggle">+</div>
+            </div>
+            <div class="exp-metrics">
+              <span class="exp-metric">$1.29M Pipeline</span>
+              <span class="exp-metric">1GB in 20s</span>
+              <span class="exp-metric">$7.3M ARR Protected</span>
+              <span class="exp-metric">15 Early Access</span>
+            </div>
+            <div class="exp-body">
+              <div class="exp-content">
+                <div class="exp-achievements">
+                  <div class="exp-achievement">
+                    <h4>APEX Infrastructure Tier</h4>
+                    <p>Built entire premium offering from zero — sizing formula, sales methodology, ROI framework, delivery process. Closed FedEx, Purolator, Evans, Schneider, Ben E. Keith, STG, and 4 more.</p>
+                  </div>
+                  <div class="exp-achievement teal">
+                    <h4>Large File Processing</h4>
+                    <p>Identified I/O bottleneck in transformation engine. Drove refactor. 114MB: 10h 43m → 2 seconds. Enabled 1GB+ payloads in under 20 seconds.</p>
+                  </div>
+                  <div class="exp-achievement navy">
+                    <h4>Clarify 6 Launch</h4>
+                    <p>Major on-prem release protecting $7.3M ARR. 15 early access customers. Coordinated hardening across engineering, QA, and security.</p>
+                  </div>
+                  <div class="exp-achievement gold">
+                    <h4>Capacity Framework</h4>
+                    <p>Built operational infrastructure for CIC — onboarding defaults, scaling guardrails, RDS/EC2 approval workflows, stage/prod segregation.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-item reveal">
+            <div class="exp-header" onclick="toggleExp(this)">
+              <span class="exp-date">May 2023 — Mar 2024</span>
+              <div>
+                <h3>Product Owner</h3>
+                <div class="company">Cleo · Remote</div>
+              </div>
+              <div class="exp-toggle">+</div>
+            </div>
+            <div class="exp-metrics">
+              <span class="exp-metric">70× Optimization</span>
+              <span class="exp-metric">Shipped in 30 Days</span>
+              <span class="exp-metric">$500K+ Expansion</span>
+            </div>
+            <div class="exp-body">
+              <div class="exp-content">
+                <div class="exp-achievements">
+                  <div class="exp-achievement">
+                    <h4>Batch Select Optimization</h4>
+                    <p>Found query inefficiency in database adapter. Queries: 2,527 → 8. Runtime: 210s → 3s. Shipped fix in 30 days.</p>
+                  </div>
+                  <div class="exp-achievement teal">
+                    <h4>Workload Prioritizer</h4>
+                    <p>Launched SLA prioritization for CIC. Drove expansion at Mueller ($157K), RJW Transport ($115K), Old Dominion ($93K), Icon Protection ($89K).</p>
+                  </div>
+                  <div class="exp-achievement navy">
+                    <h4>CIC Transformation Engine</h4>
+                    <p>Owned roadmap for cloud data transformation. Queue analytics UI with trends, real-time monitoring, notification routing.</p>
+                  </div>
+                  <div class="exp-achievement gold">
+                    <h4>Security Hardening</h4>
+                    <p>Led Snyk vulnerability remediation. Certificate validation workflows across Clarify and CIC releases.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-item reveal">
+            <div class="exp-header" onclick="toggleExp(this)">
+              <span class="exp-date">Feb 2022 — Apr 2023</span>
+              <div>
+                <h3>Product Analyst</h3>
+                <div class="company">Cleo · Remote</div>
+              </div>
+              <div class="exp-toggle">+</div>
+            </div>
+            <div class="exp-metrics">
+              <span class="exp-metric">100% Migration</span>
+              <span class="exp-metric">23% Throughput</span>
+            </div>
+            <div class="exp-body">
+              <div class="exp-content">
+                <div class="exp-achievements">
+                  <div class="exp-achievement">
+                    <h4>Gen2 → Gen3 Migration</h4>
+                    <p>Wrote the migration playbook. Led team that migrated 100% of customers from legacy VM architecture to Kubernetes cloud platform.</p>
+                  </div>
+                  <div class="exp-achievement teal">
+                    <h4>Customer Integration Analysis</h4>
+                    <p>Analyzed patterns across food & beverage, logistics, manufacturing. Turned recurring pain points into shipped improvements.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-item reveal">
+            <div class="exp-header" onclick="toggleExp(this)">
+              <span class="exp-date">Oct 2017 — Feb 2022</span>
+              <div>
+                <h3>Sr. Technical Support Engineer</h3>
+                <div class="company">Cleo</div>
+              </div>
+              <div class="exp-toggle">+</div>
+            </div>
+            <div class="exp-metrics">
+              <span class="exp-metric">Tier 1 → Tier 2 → Product</span>
+              <span class="exp-metric">Escalation Lead</span>
+            </div>
+            <div class="exp-body">
+              <div class="exp-content">
+                <div class="exp-achievements">
+                  <div class="exp-achievement">
+                    <h4>Technical Foundation</h4>
+                    <p>EDI transaction standards (850, 855, 856, 810), PostgreSQL optimization, iSeries DB2/DBMON, Linux debugging, JVM tuning.</p>
+                  </div>
+                  <div class="exp-achievement teal">
+                    <h4>Escalation Authority</h4>
+                    <p>Became the go-to for technical escalations. Engineering called me, not the other way around. Reputation led to product org.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="section-divider"></div></div>
+
+    <!-- ===== PERFORMANCE ===== -->
+    <section id="performance">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">04 — Performance</div>
+          <h2 class="section-heading">Before & after.</h2>
+          <p class="section-desc">Concrete improvements I identified, drove, and shipped.</p>
+        </div>
+        <div class="perf-grid">
+          <div class="perf-card reveal">
+            <h4>Large File Processing (114MB)</h4>
+            <div class="perf-bar-group">
+              <div class="perf-bar-label"><span>Before</span><strong>10h 43m</strong></div>
+              <div class="perf-bar-track"><div class="perf-bar-fill rust" data-width="100"></div></div>
+            </div>
+            <div class="perf-bar-group">
+              <div class="perf-bar-label"><span>After</span><strong>2 seconds</strong></div>
+              <div class="perf-bar-track"><div class="perf-bar-fill teal" data-width="0.5"></div></div>
+            </div>
+            <div class="perf-multiplier">↑ 19,000× faster</div>
+          </div>
+          <div class="perf-card reveal">
+            <h4>Batch Select Query</h4>
+            <div class="perf-bar-group">
+              <div class="perf-bar-label"><span>Before</span><strong>2,527 queries · 210s</strong></div>
+              <div class="perf-bar-track"><div class="perf-bar-fill rust" data-width="100"></div></div>
+            </div>
+            <div class="perf-bar-group">
+              <div class="perf-bar-label"><span>After</span><strong>8 queries · 3s</strong></div>
+              <div class="perf-bar-track"><div class="perf-bar-fill teal" data-width="1.4"></div></div>
+            </div>
+            <div class="perf-multiplier">↑ 70× faster · 316× fewer queries</div>
+          </div>
+          <div class="perf-card reveal">
+            <h4>1GB+ File Processing</h4>
+            <div class="perf-bar-group">
+              <div class="perf-bar-label"><span>Before</span><strong>Not possible</strong></div>
+              <div class="perf-bar-track"><div class="perf-bar-fill rust" data-width="0"></div></div>
+            </div>
+            <div class="perf-bar-group">
+              <div class="perf-bar-label"><span>After</span><strong>~20 seconds</strong></div>
+              <div class="perf-bar-track"><div class="perf-bar-fill teal" data-width="60"></div></div>
+            </div>
+            <div class="perf-multiplier">✦ New capability unlocked</div>
+          </div>
+          <div class="perf-card reveal">
+            <h4>Cloud Infrastructure</h4>
+            <div class="perf-bar-group">
+              <div class="perf-bar-label"><span>Baseline</span><strong>Standard throughput</strong></div>
+              <div class="perf-bar-track"><div class="perf-bar-fill rust" data-width="77"></div></div>
+            </div>
+            <div class="perf-bar-group">
+              <div class="perf-bar-label"><span>After</span><strong>+23% throughput</strong></div>
+              <div class="perf-bar-track"><div class="perf-bar-fill teal" data-width="100"></div></div>
+            </div>
+            <div class="perf-multiplier">↑ 23% improvement</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="section-divider"></div></div>
+
+    <!-- ===== REVENUE / DEALS ===== -->
+    <section id="revenue" class="deals-section">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">05 — Revenue</div>
+          <h2 class="section-heading">Deals I closed.</h2>
+          <p class="section-desc">I participated in sales calls, presented the technical value prop, sized infrastructure, and closed deals alongside the sales team.</p>
+        </div>
+        <div class="deals-layout">
+          <div class="deals-col reveal">
+            <div class="deals-col-header">
+              <h3>APEX Deals</h3>
+              <span class="deals-total">$1.29M+</span>
+            </div>
+            <div class="deal-row"><span class="deal-name">Purolator</span><span class="deal-value">$466,000</span></div>
+            <div class="deal-row"><span class="deal-name">Evans</span><span class="deal-value">$166,000</span></div>
+            <div class="deal-row"><span class="deal-name">FedEx</span><span class="deal-value">$150,000</span></div>
+            <div class="deal-row"><span class="deal-name">Schneider</span><span class="deal-value">$106,000</span></div>
+            <div class="deal-row"><span class="deal-name">STG</span><span class="deal-value">$75,000</span></div>
+            <div class="deal-row"><span class="deal-name">Ben E. Keith</span><span class="deal-value">$50,000</span></div>
+            <div class="deal-row"><span class="deal-name">+ 4 more accounts</span><span class="deal-value">Various</span></div>
+          </div>
+          <div class="deals-col reveal">
+            <div class="deals-col-header">
+              <h3>WLP Expansion</h3>
+              <span class="deals-total">$500K+</span>
+            </div>
+            <div class="deal-row"><span class="deal-name">Mueller</span><span class="deal-value">$157,000</span></div>
+            <div class="deal-row"><span class="deal-name">RJW Transport</span><span class="deal-value">$115,000</span></div>
+            <div class="deal-row"><span class="deal-name">Old Dominion</span><span class="deal-value">$93,000</span></div>
+            <div class="deal-row"><span class="deal-name">Icon Protection</span><span class="deal-value">$89,000</span></div>
+            <div class="deal-row"><span class="deal-name">LACTALIS</span><span class="deal-value">$39,500</span></div>
+            <div class="deal-row"><span class="deal-name">BioCareSD</span><span class="deal-value">$16,000</span></div>
+            <div class="deal-row"><span class="deal-name">+ 3 more accounts</span><span class="deal-value">Various</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="section-divider"></div></div>
+
+    <!-- ===== TECHNICAL ===== -->
+    <section id="technical">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">06 — Technical</div>
+          <h2 class="section-heading">Deep, not wide.</h2>
+          <p class="section-desc">Not a PM who hands off to engineering. I debug at the database layer, read DBMON traces, and tune JVMs.</p>
+        </div>
+        <div class="tech-bento">
+          <div class="tech-card wide reveal">
+            <div class="tech-card-icon rust">DB</div>
+            <h4>Database & Query Optimization</h4>
+            <p>PostgreSQL optimization, iSeries DB2 analysis, DBMON trace reading, query execution plan analysis, JDBC troubleshooting. Found the batch select inefficiency that shipped a 70× improvement.</p>
+            <div class="tech-pills">
+              <span>PostgreSQL</span><span>iSeries DB2</span><span>DBMON</span><span>Query Plans</span><span>JDBC</span>
+            </div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon teal">K8</div>
+            <h4>Infrastructure & Cloud</h4>
+            <p>Kubernetes migration, capacity modeling, RDS/EC2 sizing, stage/prod segregation.</p>
+            <div class="tech-pills">
+              <span>Kubernetes</span><span>AWS RDS</span><span>EC2</span><span>Cloud Ops</span>
+            </div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon navy">JVM</div>
+            <h4>JVM & Performance</h4>
+            <p>Production root cause diagnosis. Heap analysis, garbage collection tuning, threading optimization.</p>
+            <div class="tech-pills">
+              <span>JVM Tuning</span><span>Heap Analysis</span><span>GC</span><span>Threading</span>
+            </div>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-card-icon gold">EDI</div>
+            <h4>EDI/X12 & Integration</h4>
+            <p>10 years of specialized domain knowledge. Purchase Orders, Acknowledgments, Ship Notices, Invoices.</p>
+            <div class="tech-pills">
+              <span>850 PO</span><span>855 ACK</span><span>856 ASN</span><span>810 Invoice</span><span>XML</span><span>API</span>
+            </div>
+          </div>
+          <div class="tech-card wide reveal">
+            <div class="tech-card-icon teal">SEC</div>
+            <h4>Security & Tooling</h4>
+            <p>Snyk vulnerability remediation, certificate validation workflows, security hardening. Daily driver: Jira, Confluence, PostgreSQL, Linux debugging tools, JVM profiling tools.</p>
+            <div class="tech-pills">
+              <span>Snyk</span><span>Cert Validation</span><span>Jira</span><span>Confluence</span><span>Linux</span><span>JVM Profiling</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="section-divider"></div></div>
+
+    <!-- ===== DOMAIN ===== -->
+    <section id="domain" class="domain-section">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">07 — Domain</div>
+          <h2 class="section-heading">Supply chain fluency.</h2>
+          <p class="section-desc">I understand the business processes, where transactions fail, and how to recover.</p>
+        </div>
+        <div class="domain-grid">
+          <div class="domain-card reveal">
+            <h3>Purchase Order Management</h3>
+            <div class="domain-items">
+              <div class="domain-item"><span class="domain-arrow">→</span><span>850 Purchase Order creation and transmission</span></div>
+              <div class="domain-item"><span class="domain-arrow">→</span><span>855 PO Acknowledgment processing</span></div>
+              <div class="domain-item"><span class="domain-arrow">→</span><span>856 Advance Ship Notice automation</span></div>
+              <div class="domain-item"><span class="domain-arrow">→</span><span>Exception handling — supplier mapping issues</span></div>
+            </div>
+          </div>
+          <div class="domain-card reveal">
+            <h3>AP Invoice Management</h3>
+            <div class="domain-items">
+              <div class="domain-item"><span class="domain-arrow">→</span><span>810 invoice processing & compliance checks</span></div>
+              <div class="domain-item"><span class="domain-arrow">→</span><span>Three-way match logic (PO, receipt, invoice)</span></div>
+              <div class="domain-item"><span class="domain-arrow">→</span><span>Duplicate detection & exception management</span></div>
+              <div class="domain-item"><span class="domain-arrow">→</span><span>ERP posting workflows</span></div>
+            </div>
+          </div>
+          <div class="domain-card reveal">
+            <h3>Order-to-Invoice Flows</h3>
+            <div class="domain-items">
+              <div class="domain-item"><span class="domain-arrow">→</span><span>End-to-end process understanding</span></div>
+              <div class="domain-item"><span class="domain-arrow">→</span><span>Where transactions fail and how to recover</span></div>
+              <div class="domain-item"><span class="domain-arrow">→</span><span>Customer impact analysis of failures</span></div>
+              <div class="domain-item"><span class="domain-arrow">→</span><span>Multi-enterprise data exchange patterns</span></div>
+            </div>
+          </div>
+          <div class="domain-card reveal">
+            <h3>Procure-to-Pay</h3>
+            <div class="domain-items">
+              <div class="domain-item"><span class="domain-arrow">→</span><span>Supplier onboarding & document automation</span></div>
+              <div class="domain-item"><span class="domain-arrow">→</span><span>Compliance requirements & audit readiness</span></div>
+              <div class="domain-item"><span class="domain-arrow">→</span><span>Cash flow impact & payment optimization</span></div>
+              <div class="domain-item"><span class="domain-arrow">→</span><span>ERP integration (SAP) patterns</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUOTE ===== -->
+    <section class="quote-section">
+      <div class="container">
+        <div class="reveal">
+          <p class="quote-text">
+            "I find the bottleneck engineers miss, <em>size infrastructure to protect revenue</em>, and keep leadership aligned across parallel initiatives."
+          </p>
+          <p class="quote-attr">— Joseph Burns</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONSULTING ===== -->
+    <section id="consulting" style="background: #161820; padding: 6rem 0;">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">08 — Consulting</div>
+          <h2 class="section-heading">Available for consulting.</h2>
+          <p class="section-desc">Need fractional product expertise, workflow automation, or technical strategy? I help teams ship faster and smarter.</p>
+        </div>
+
+        <div class="consulting-grid reveal">
+          <div class="consulting-card">
+            <div class="consulting-icon">⚡</div>
+            <h3 class="consulting-title">AI Workflow Automation</h3>
+            <p class="consulting-desc">Design and implement AI-powered workflows that eliminate manual work — from document processing to intelligent routing and decision support.</p>
+            <ul class="consulting-list">
+              <li>LLM integration & prompt engineering</li>
+              <li>Process automation with AI agents</li>
+              <li>RAG pipelines & knowledge systems</li>
+              <li>Cost optimization & model selection</li>
+            </ul>
+          </div>
+          <div class="consulting-card">
+            <div class="consulting-icon">🔧</div>
+            <h3 class="consulting-title">IT Infrastructure & Systems</h3>
+            <p class="consulting-desc">Hands-on technical consulting for teams that need someone who can bridge the gap between engineering and business.</p>
+            <ul class="consulting-list">
+              <li>System architecture review</li>
+              <li>Integration strategy (EDI, API, B2B)</li>
+              <li>Performance audits & optimization</li>
+              <li>Cloud migration planning</li>
+            </ul>
+          </div>
+          <div class="consulting-card">
+            <div class="consulting-icon">📊</div>
+            <h3 class="consulting-title">Product Strategy</h3>
+            <p class="consulting-desc">Turn ambiguous roadmaps into shipped outcomes. I bring 10 years of B2B SaaS product experience to your toughest problems.</p>
+            <ul class="consulting-list">
+              <li>Roadmap prioritization & sequencing</li>
+              <li>Stakeholder alignment workshops</li>
+              <li>Revenue impact analysis</li>
+              <li>Go-to-market for technical products</li>
+            </ul>
+          </div>
+          <div class="consulting-card">
+            <div class="consulting-icon">🔗</div>
+            <h3 class="consulting-title">Supply Chain Integration</h3>
+            <p class="consulting-desc">Deep domain expertise in supply chain data flows — EDI, AS2, SFTP, API — and the business logic that drives them.</p>
+            <ul class="consulting-list">
+              <li>EDI/integration platform selection</li>
+              <li>Trading partner onboarding strategy</li>
+              <li>Data mapping & transformation design</li>
+              <li>Compliance & standards consulting</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="consulting-cta reveal">
+          <p class="consulting-cta-text">Interested in working together?</p>
+          <a href="mailto:joewhojoeburns@gmail.com?subject=Consulting%20Inquiry" class="consulting-cta-btn">Get in Touch →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">09 — Contact</div>
+        </div>
+        <div class="contact-layout">
+          <div class="reveal">
+            <h2 class="contact-heading">Let's build<br>something <em>great.</em></h2>
+            <p class="contact-sub">
+              Looking for a Senior Product Manager role in supply chain, integration, or B2B SaaS.
+              Remote-friendly, with a company that values technical depth and domain expertise.
+            </p>
+            <div class="contact-links">
+              <a href="mailto:joewhojoeburns@gmail.com" class="contact-link">
+                <div class="contact-link-icon">✉</div>
+                <div>
+                  <div class="contact-link-label">Email</div>
+                  <div class="contact-link-value">joewhojoeburns@gmail.com</div>
+                </div>
+              </a>
+              <a href="tel:+15704499368" class="contact-link">
+                <div class="contact-link-icon">☎</div>
+                <div>
+                  <div class="contact-link-label">Phone</div>
+                  <div class="contact-link-value">(570) 449-9368</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="contact-facts reveal">
+            <h3>Quick Facts</h3>
+            <div class="fact-row">
+              <span class="fact-label">Location</span>
+              <span class="fact-value">Fleetwood, PA</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-label">Education</span>
+              <span class="fact-value">B.S. Computer Science<br>La Salle University, 2016</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-label">Experience</span>
+              <span class="fact-value">10 years at Cleo</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-label">Focus</span>
+              <span class="fact-value">Supply Chain Integration<br>B2B/EDI Automation</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-label">Work Style</span>
+              <span class="fact-value">Remote-Friendly</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <footer class="footer">
+        <div class="footer-left">© 2025 Joseph Burns</div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    // NAV SCROLL
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // MOBILE MENU
+    const toggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+    document.querySelectorAll('.mob-link').forEach(l => {
+      l.addEventListener('click', () => {
+        toggle.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // SCROLL REVEAL
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // ANIMATED COUNTERS
+    function animateCounter(el) {
+      const target = parseFloat(el.dataset.count);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const duration = 2000;
+      const start = performance.now();
+      function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        const val = target * ease;
+        el.textContent = target >= 100
+          ? prefix + Math.floor(val).toLocaleString() + suffix
+          : prefix + val.toFixed(target % 1 !== 0 ? 2 : 0) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+    const counters = document.querySelectorAll('[data-count]');
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !e.target.dataset.animated) {
+          e.target.dataset.animated = '1';
+          animateCounter(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(el => counterObs.observe(el));
+
+    // PERFORMANCE BARS
+    const bars = document.querySelectorAll('.perf-bar-fill');
+    const barObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.style.width = e.target.dataset.width + '%';
+      });
+    }, { threshold: 0.3 });
+    bars.forEach(b => barObs.observe(b));
+
+    // EXPERIENCE TOGGLES
+    function toggleExp(header) {
+      header.closest('.exp-item').classList.toggle('open');
+    }
+
+    // SMOOTH SCROLL
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>
